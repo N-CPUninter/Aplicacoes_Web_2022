@@ -1,1 +1,16 @@
 Exemplo da Aula teórica 5
+
+Os arquivos:
+app. component.css (está vazio)
+app.component.html
+app. component.spects (não foi alterado depois de criado o projeto)
+app.component.ts
+app.module.ts
+fatura.ts
+
+Ficam dentro da pasta: nome do projeto/src/app
+
+o arquivo:
+
+index.html
+Ficam dentro da pasta: nome do projeto/src
