@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faturas</title>
+</head>
+<body>
+
+   
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button class="nav-link active" id="nav-pago-tab" data-bs-toggle="tab" data-bs-target="#nav-pago" type="button" role="tab" aria-controls="nav-pago" aria-selected="true">Faturas Pagas</button>
+    <button class="nav-link" id="nav-aberto-tab" data-bs-toggle="tab" data-bs-target="#nav-aberto" type="button" role="tab" aria-controls="nav-aberto" aria-selected="false">Faturas em Aberto</button>
+    
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="container tab-pane fade show active" id="nav-pago" role="tabpanel" aria-labelledby="nav-pago-tab">
+    
+   
+    <h3>FATURAS PAGAS</h3>
+    <table class='table table-striped'>
+    <thead>
+    <tr><th>Empresa</th><th>Valor</th></tr>
+    </thead>
+    
+    <tbody >
+    <ng-container *ngFor=" let fatura of lista_faturas">
+    <tr *ngIf="fatura.dt_pgto!=''">
+    <td>{{ fatura.empresa }} </td>
+    <td> <span style="color: rgb(0, 34, 255)">{{ fatura.valor |  number :'1.2-2' }}</span> </td>
+    </tr>
+    </ng-container>
+    </tbody>
+    
+    </table>
+  </div>
+  <div class="container tab-pane fade" id="nav-aberto" role="tabpanel" aria-labelledby="nav-aberto-tab">
+    
+    
+    <h3>FATURAS Em Aberto</h3>
+    <table class='table table-striped'>
+    <thead>
+    <tr><th>Empresa</th><th>Valor</th></tr>
+    </thead>
+     
+    <tbody>
+    <ng-container *ngFor=" let fatura of lista_faturas">
+    <tr *ngIf="fatura.dt_pgto==''">
+    <td>{{ fatura.empresa }} </td>
+    <td> <span style="color: rgb(255, 0, 0)">{{ fatura.valor  | number :'1.2-2'}}</span> </td>
+    </tr>
+    </ng-container>
+    </tbody>
+    
+    </table>
+  </div>
+  
+</div>
+
+
+<!--<button class="card wrapper highlight-card card-small" src="../audio.mp3" (click)="playSound()">Play</button>-->
+</body>
+</html>
