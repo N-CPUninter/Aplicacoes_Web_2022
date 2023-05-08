@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .opcao{
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 200px;
+            height: 150px;
+            padding: 10px;
+            background-color: slategray;
+            border: 1px solid gray;
+        }
+        .tipo{
+         font-weight: bold;
+         text-shadow: 1px 1px 1px black;
+         color: white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    function cria_janela(CONF){
+
+        var lista =CONF.lista
+
+        if(" CONF.processa"){
+            alert("Nenhuma função será chamada! Verifique.")
+        };
+        var janela=document.createElement("div");
+        janela.className="opcao";
+
+        var executa=function(){
+            valor=document.querySelector('input[name="tipo"]:checked').value;
+            CONF.processa(valor);
+            document.body.removeChild(janela);
+        };
+        var fim=function(){
+            document.body.removeChild(janela);
+
+        };
+        for(let i=0, tam=CONF.lista.length; i<tam;i++){
+            var input=document.createElement("input");
+            input.id="tipo";
+            input.type="radio";
+            input.name="tipo";
+            input.value=CONF.lista[i][0];
+            janela.appendChild(input);
+
+            var label=document.createElement("label");
+            label.textContent=CONF.lista[i][1];
+            label.className="tipo";
+            label.htmlFor="tipo";
+            janela.appendChild(label);
+
+        var br=document.createElement("br");
+        janela.appendChild(br);
+        }
+        var br=document.createElement("br");
+        janela.appendChild(br);
+
+        var cancela = document.createElement("button");
+        cancela.textContent="Cancela";
+        cancela.addEventListener("click", fim, false);
+        janela.appendChild(cancela);
+
+        var button = document.createElement("button");
+        button.textContent="Executa";
+        button.addEventListener("click", executa, false);
+        janela.appendChild(button);
+
+        document.body.appendChild(janela);
+    }
+
+    // chama a função
+    cria_janela( {
+        lista: [
+            ["op1","Opcao 1"],
+            ["op2","Opcao 2"],
+            ["op3","Opcao 3"],
+            ["op4","Opcao 4"]
+        ],
+        
+        tipo: "radio",
+        processa: function(opcao){
+            switch(opcao) {
+               
+                case "op1":
+                    alert("Primeira opcao");
+                    break;
+                case "op2":
+                    alert("Segunda opcao");
+                    break;
+                case "op3":
+                    alert("Terceira opcao");
+                    break;
+                case "op4":
+                    alert("Nova opcao");
+                    break;
+                default:
+                    alert("Nenhuma opcao");
+            }
+        }
+
+    });
+
+    </script>
+</body>
+</html>
