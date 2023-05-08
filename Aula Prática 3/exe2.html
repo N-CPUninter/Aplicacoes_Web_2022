@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function lista_clientes(campo,cad){
+            let lista_cli=[];
+            for(cliente of cad){
+                lista_cli.push(cliente[campo]);
+            }
+            return lista_cli
+        }
+    // CHAMA a função
+    var total_clientes=lista_clientes("empresa",[
+        {
+            cod:1,
+            empresa:"Empresa de Alcool Gel Ltda",
+            valor: 2560,
+            dt_vencto: "21/06/2020",
+            dt_pgto: "22/06/2020",
+            nf: 145
+        },
+        {
+            cod:2,
+            empresa:"Transportes SA",
+            valor: 1680,
+            dt_vencto: "16/11/2020",
+            dt_pgto: "16/11/2020",
+            nf: 1024
+        },
+        {
+            cod:3,
+            empresa:"Industria de Cimentos SA",
+            valor: 8150,
+            dt_vencto: "14/03/2021",
+            dt_pgto: "",
+            nf: 32
+        }
+        ]);
+    
+console.log(total_clientes)
+
+    
+    </script>
+</body>
+</html>
