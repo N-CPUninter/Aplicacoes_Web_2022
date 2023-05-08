@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Document</title>
+</head>
+<style>
+ table, td{
+ border: 1px solid brown;
+ }
+</style>
+<body>
+ <script>
+
+ var lista_carrinho=[
+ ["Fralda", 45.4],
+ ["Leite em Pó", 19.5]
+ ];
+
+ var outro_carrinho=[
+ ["Frango", 30.0],
+ ["Guaraná", 9.5],
+ ["Batata frita", 20.0]
+ ];
+
+ function cria_tab(AR_PROD){
+ let str_tabela="<table>";
+ for(let produto of AR_PROD){
+ str_tabela+="<tr>" ;
+ str_tabela+="<td>" +produto[0]+"</td>";
+ str_tabela+="<td>" +produto[1]+"</td>";
+ str_tabela+="</tr>";
+ }
+ str_tabela+="</table>";
+ return str_tabela;
+ }
+ document.write(cria_tab(lista_carrinho));
+ document.write("<br>");
+ document.write(cria_tab(outro_carrinho));
+ </script>
+</body>
+</html>
