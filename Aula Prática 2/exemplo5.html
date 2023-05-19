@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<div style="width: 400px;">
+
+    <form>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="editar">
+            <label class="custom-control-label" for="editar">Editar</label>
+        </div>
+        <label for="temperatura">Temperatura: </label>
+        <input type="range" class="custom-range" min="0" max="10" id="tempertura" name="temperatura">
+    </form>
+</div>
+<!-- colocar em src="nome completo de uma imagem, que deverá estar salva na mesma pasta onde você salvou o arquivo, por exemplo]: flor.png ou flor.jpg" -->
+<img class="img-fluid" src=" " alt="logotipo">
+<br>
+<br>
+<!-- Modal-->
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#janela"> >Atenção<</button>
+
+<!-- Cria pop up-->
+<div class="modal" id="janela">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!--Modal Header-->
+            <div class="modal-header">
+                <h4 class="modal-title">Atenção: </h4>
+                <button type="button" class="close" data-dismiss="modal"></button>
+            </div>
+            <!-- Modal body-->
+            <div class="modal-body">
+                Antes de sair, verifique seu backup diário.
+            </div>
+
+              <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+      </div>
+        </div>
+    </div>
+
+</div>
+   
+
+</body>
+</html>
