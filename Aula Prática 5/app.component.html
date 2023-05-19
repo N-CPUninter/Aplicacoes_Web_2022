@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>Confere CEP</h3>
+  <form class='' #cepForm="ngForm" (ngSubmit)="pesquisa()">
+
+    <div>
+      <label for="cep" class="">
+        Informe seu CEP
+      </label>
+      <input name="cep" type="text" [(ngModel)]="cep">
+      </div>
+      <div class="btn btn-primary btn-sm btn-icon-split">
+        <span class="icon text-white-80">
+          <i class="fas fa-home"></i>
+        </span>
+      <button class="btn btn-primary btn-sm" type="submit">Pesquisa</button>
+    </div>
+  </form>
+  <br>
+  <div class="ml-2 spinner-broder spinner-border-sm" [hidden]="!espera"></div>
+  <div class="shadow-lg mx-4" [hidden]="!pesquisado">
+    <b>Cep pesquisado: </b>
+    {{cep}}
+    <br><b>Rua encontrada: </b>
+    {{retorno.rua}}
+    <br><b>Na cidade: </b>
+    {{retorno.cidade}}
+    <br><b>Do estado: </b>
+    {{retorno.estado}}
+    <br><br><br><button (click)="limpa()">Reinicia</button>
+  </div>
+</body>
+</html>
