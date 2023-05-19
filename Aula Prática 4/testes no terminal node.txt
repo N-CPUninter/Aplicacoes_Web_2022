@@ -1,0 +1,10 @@
+var total=5*89
+console.log(total)
+if (total<500) console.log("valor insuficiente")
+var taxa=5.5
+console.log(taxa)
+var total=5*4+3
+console.log(total)
+if(total>20) console.log("Maior que 20")
+
+var taxa=5.5
